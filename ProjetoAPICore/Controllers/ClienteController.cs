@@ -17,7 +17,7 @@ namespace ProjetoAPICore.Controllers
         [HttpGet("consultar-cliente")]        
         public ActionResult ConsultarCliente()
         {
-            return BadRequest("Robson");
+            return BadRequest("TESTE");
         }
 
 
