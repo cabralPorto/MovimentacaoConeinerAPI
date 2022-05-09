@@ -13,11 +13,13 @@ namespace ProjetoAPICore.Controllers
         {
             _conteinerServico = conteinerServico;
         }
-        [HttpGet("consultar-conteiner")]
-        public ActionResult ConsultarConteiner()
-        {
-            return BadRequest("TESTE");
-        }
+
+        //[HttpGet("consultar-conteiner")]
+        //public ActionResult ConsultarConteiner()
+        //{
+        //    return BadRequest("TESTE");
+        //}
+
         [HttpPost("criar-conteiner")]
         public ActionResult CriarConteiner(ConteinerDto conteinerDto)
         {

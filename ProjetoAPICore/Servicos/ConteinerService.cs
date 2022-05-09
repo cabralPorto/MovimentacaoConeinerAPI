@@ -9,7 +9,7 @@ namespace ProjetoAPICore.Servicos
     {
         private readonly IConteinerRepository _conteinerRepository;
 
-        public ConteinerService(IConteinerRepository conteinerRepository) 
+        public ConteinerService(IConteinerRepository conteinerRepository)
         {
             _conteinerRepository = conteinerRepository;
         }
@@ -18,12 +18,12 @@ namespace ProjetoAPICore.Servicos
             var conteiner = _conteinerRepository.ObterConteinerPorId(conteinerDto.Id);
             if (conteiner == null)
                 return null;
-            
+
             conteiner = CriarEntidadeConteiner(conteinerDto);
 
             _conteinerRepository.CriarConteiner(conteiner);
 
-                return conteinerDto;
+            return conteinerDto;
         }
 
         public IEnumerable<Conteiner> ObterConteiner()
@@ -31,7 +31,7 @@ namespace ProjetoAPICore.Servicos
             return _conteinerRepository.ObterConteineres();
         }
 
-        private Conteiner CriarEntidadeConteiner(ConteinerDto conteinerDto) 
+        private Conteiner CriarEntidadeConteiner(ConteinerDto conteinerDto)
         {
             return new Conteiner
             {
