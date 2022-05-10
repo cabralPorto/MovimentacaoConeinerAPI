@@ -19,6 +19,9 @@ namespace ProjetoAPICore.Configuracoes
             services.AddScoped<IMovimentacaoRepository, MovimentacaoRepository >();
             services.AddScoped<IMovimentacaoService, MovimentacaoService>();
 
+            services.AddScoped<ITipoMovimentacaoRepository, TipoMovimentacaoRepository>();
+            services.AddScoped<ITipoMovimentacaoService, TipoMovimentacaoService>();
+
             return services;
         }
     }

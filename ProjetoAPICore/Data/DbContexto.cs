@@ -13,5 +13,8 @@ namespace ProjetoAPICore.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Conteiner> Conteiners { get; set; }
         public DbSet<Movimentacao> Movimentacoes { get; set; }
+
+        public DbSet<TipoMovimentacao> TipoMovimentacoes { get; set; }
+
     }
 }
