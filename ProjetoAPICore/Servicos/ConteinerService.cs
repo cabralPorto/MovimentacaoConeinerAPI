@@ -26,9 +26,9 @@ namespace ProjetoAPICore.Servicos
             return conteinerDto;
         }
 
-        public IEnumerable<Conteiner> ObterConteiner()
+        public IEnumerable<Conteiner> ObterConteiners()
         {
-            return _conteinerRepository.ObterConteineres();
+            return _conteinerRepository.ObterConteiners();
         }
 
         private Conteiner CriarEntidadeConteiner(ConteinerDto conteinerDto)

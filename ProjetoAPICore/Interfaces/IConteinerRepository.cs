@@ -7,6 +7,6 @@ namespace ProjetoAPICore.Interfaces
 
         Conteiner ObterConteinerPorId( Guid IdConteiner);
 
-        IEnumerable<Conteiner> ObterConteineres();
+        IEnumerable<Conteiner> ObterConteiners();
     }
 }

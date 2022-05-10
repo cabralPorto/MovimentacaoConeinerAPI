@@ -14,10 +14,10 @@ namespace ProjetoAPICore.Controllers
             _conteinerServico = conteinerServico;
         }
 
-        //[HttpGet("consultar-conteiner")]
-        //public ActionResult ConsultarConteiner()
+        //[HttpGet ("consultar-conteiner")]
+        //public ActionResult consultarconteiner()
         //{
-        //    return BadRequest("TESTE");
+        //    return BadRequest("teste");
         //}
 
         [HttpPost("criar-conteiner")]
@@ -26,14 +26,14 @@ namespace ProjetoAPICore.Controllers
             var conteiner = _conteinerServico.CriarConteiner(conteinerDto);
             if (conteiner == null)
                 return BadRequest("Conteiner já existe");
-            
-                return Ok(conteiner);
+
+            return Ok(conteiner);
         }
 
         [HttpGet("consultar-conteiner")]
-        public ActionResult ConsultarConteiners() 
+        public ActionResult ConsultarConteiners()
         {
-            var conteiners = _conteinerServico.ObterConteiner();
+            var conteiners = _conteinerServico.ObterConteiners();
 
             return Ok(conteiners);
         }

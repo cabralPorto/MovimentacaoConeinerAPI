@@ -1,4 +1,5 @@
-﻿using ProjetoAPICore.Interfaces;
+﻿
+using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
 
 namespace ProjetoAPICore.Data.Repository
@@ -18,14 +19,16 @@ namespace ProjetoAPICore.Data.Repository
             _dbContexto.SaveChanges();
         }
 
-        public IEnumerable<Conteiner> ObterConteineres()
-        {
-            return _dbContexto.Conteiners.ToList();
-        }
+   
 
         public Conteiner ObterConteinerPorId(Guid IdConteiner)
         {
             return _dbContexto.Conteiners.FirstOrDefault(c => c.Id == IdConteiner);
+        }
+        public IEnumerable<Conteiner> ObterConteiners()
+        {
+            
+            return _dbContexto.Conteiners.ToList();
         }
     }
 }

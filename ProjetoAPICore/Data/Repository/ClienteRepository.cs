@@ -19,7 +19,7 @@ namespace ProjetoAPICore.Data.Repository
 
         public Cliente ObterClientePorId(Guid idCliente)
         {
-            return _dbContexto.Clientes.FirstOrDefault(c => c.Id == idCliente); ;
+            return _dbContexto.Clientes.FirstOrDefault(c => c.Id == idCliente); 
         }
 
         public IEnumerable<Cliente> ObterClientes()

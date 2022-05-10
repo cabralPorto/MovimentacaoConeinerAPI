@@ -14,12 +14,7 @@ namespace ProjetoAPICore.Controllers
             _clienteServico = clienteServico;
         }
 
-        [HttpGet("consultar-cliente")]        
-        public ActionResult ConsultarCliente()
-        {
-            return BadRequest("TESTE");
-        }
-
+       
 
         [HttpPost("criar-cliente")]        
         public ActionResult CriarCliente(ClienteDto clienteDto)
