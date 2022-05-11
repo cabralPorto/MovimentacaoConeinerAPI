@@ -19,7 +19,7 @@ namespace ProjetoAPICore.Controllers
         public ActionResult criarMovimentacao(MovimentacaoDto movimentacaoDto)
         {
             var movimentacao = _movimetacaoService.CriarMovimentacao(movimentacaoDto);
-            if (movimentacao == null)
+            if (movimentacao != null)
                 return BadRequest("Movimentação já existente");
 
             return Ok(movimentacao);

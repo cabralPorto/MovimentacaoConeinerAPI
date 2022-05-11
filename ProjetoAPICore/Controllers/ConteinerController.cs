@@ -25,6 +25,7 @@ namespace ProjetoAPICore.Controllers
         {
             var conteiner = _conteinerServico.CriarConteiner(conteinerDto);
             if (conteiner == null)
+                
                 return BadRequest("Conteiner já existe");
 
             return Ok(conteiner);

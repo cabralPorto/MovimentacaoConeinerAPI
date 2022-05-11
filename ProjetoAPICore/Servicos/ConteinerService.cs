@@ -16,7 +16,7 @@ namespace ProjetoAPICore.Servicos
         public ConteinerDto? CriarConteiner(ConteinerDto conteinerDto)
         {
             var conteiner = _conteinerRepository.ObterConteinerPorId(conteinerDto.Id);
-            if (conteiner == null)
+            if (conteiner != null)
                 return null;
 
             conteiner = CriarEntidadeConteiner(conteinerDto);

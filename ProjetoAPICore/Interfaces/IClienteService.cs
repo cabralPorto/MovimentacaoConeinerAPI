@@ -6,6 +6,9 @@ namespace ProjetoAPICore.Interfaces
     public interface IClienteService
     {
         ClienteDto? CriarCliente(ClienteDto clienteDto);
-        IEnumerable<Cliente> ObterClientes();
+        IEnumerable<Cliente> ObterTodosClientes();
+        Cliente ObterClientePorNome(string nome);
+        ClienteDto AlterarCliente(ClienteDto clienteDto);
+        bool ExcluirCliente(Guid idCliente);
     }
 }

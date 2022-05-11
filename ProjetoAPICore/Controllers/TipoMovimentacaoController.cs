@@ -15,7 +15,7 @@ namespace ProjetoAPICore.Controllers
         }
 
         [HttpPost("Cadatrar-TipoMovimentacao")]
-        public ActionResult criarTipoMovimentacao( TipoMovimentacaoDto tipoMovimentacaoDto)
+        public ActionResult CriarTipoMovimentacao( TipoMovimentacaoDto tipoMovimentacaoDto)
         {
             var tipoMovimentacao = _tipoMovimentacaoService.CriarTipoMovimentacao(tipoMovimentacaoDto);
             if (tipoMovimentacao == null)
@@ -25,7 +25,7 @@ namespace ProjetoAPICore.Controllers
         }
         
         [HttpGet("consultar-TipoMovimentacao")]
-        public ActionResult consultarTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto)
+        public ActionResult ConsultarTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto)
         {
             var tipoMovimentacoes = _tipoMovimentacaoService.ObterTipoMovimentacoes();
             return Ok(tipoMovimentacoes);

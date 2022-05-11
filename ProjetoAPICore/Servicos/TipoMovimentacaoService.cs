@@ -15,7 +15,7 @@ namespace ProjetoAPICore.Servicos
         public TipoMovimentacaoDto? CriarTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto)
         {
             var tipoMovimentacao = _tipoMovimentacaoRepository.ObterTipoMovimentacaoPorId(tipoMovimentacaoDto.Id);
-                if (tipoMovimentacao == null)
+                if (tipoMovimentacao != null)
                     return null;
             
             tipoMovimentacao = CriarEntidadeTipoMovimentacao(tipoMovimentacaoDto);
@@ -23,21 +23,19 @@ namespace ProjetoAPICore.Servicos
 
             return tipoMovimentacaoDto;   
         }
-        public IEnumerable<TipoMovimentacao> ObterTipoMovimentacao()
+        public IEnumerable<TipoMovimentacao> ObterTipoMovimentacoes()
         {
             return _tipoMovimentacaoRepository.ObterTipoMovimentacoes();
         }
 
-        public IEnumerable<TipoMovimentacaoDto> ObterTipoMovimentacoes()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         private TipoMovimentacao CriarEntidadeTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto)
         {
             return new TipoMovimentacao
                 {
                     Descricao = tipoMovimentacaoDto.Descricao,
+                    
                     DataCriacao = DateTime.Now
             };
         }

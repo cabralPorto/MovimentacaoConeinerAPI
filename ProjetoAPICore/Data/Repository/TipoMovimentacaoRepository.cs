@@ -23,7 +23,7 @@ namespace ProjetoAPICore.Data.Repository
 
         public IEnumerable<TipoMovimentacao> ObterTipoMovimentacoes()
         {
-            throw new NotImplementedException();
+            return _dbContexto.TipoMovimentacoes.ToList();
         }
     }
 }

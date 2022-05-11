@@ -1,4 +1,5 @@
 ﻿using ProjetoAPICore.Dtos;
+using ProjetoAPICore.Modelos;
 
 namespace ProjetoAPICore.Interfaces
 {
@@ -6,6 +7,6 @@ namespace ProjetoAPICore.Interfaces
     {
         TipoMovimentacaoDto? CriarTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto);
 
-        IEnumerable<TipoMovimentacaoDto> ObterTipoMovimentacoes();
+        IEnumerable<TipoMovimentacao> ObterTipoMovimentacoes();
     }
 }
