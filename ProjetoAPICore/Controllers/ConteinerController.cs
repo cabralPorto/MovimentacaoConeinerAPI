@@ -14,12 +14,6 @@ namespace ProjetoAPICore.Controllers
             _conteinerServico = conteinerServico;
         }
 
-        //[HttpGet ("consultar-conteiner")]
-        //public ActionResult consultarconteiner()
-        //{
-        //    return BadRequest("teste");
-        //}
-
         [HttpPost("criar-conteiner")]
         public ActionResult CriarConteiner(ConteinerDto conteinerDto)
         {
@@ -37,6 +31,30 @@ namespace ProjetoAPICore.Controllers
             var conteiners = _conteinerServico.ObterConteiners();
 
             return Ok(conteiners);
+        }
+        
+        [HttpGet("consultar-conteiner/{numero}")]
+        public ActionResult ConsultarConteinerPorNome(String numero) 
+        {
+            if (string.IsNullOrEmpty(numero))
+                return BadRequest("Conteiner não informado.");
+
+            var conteiners = _conteinerServico.ObterConteinerPorNome(numero);
+
+            if (conteiners == null)
+                return BadRequest("Cliente não encontrado.");
+
+            return Ok(conteiners);
+        }
+        [HttpPut("alterar-conteiner")]
+        public ActionResult AlterarConteiner(ConteinerDto conteinerDto)
+        {
+            var conteiner = _conteinerServico.AlterarConteiner(conteinerDto);
+           
+            if (conteiner == null)
+                return BadRequest("Conteiner não encontrado.");
+
+            return Ok(conteiner);
         }
     }
 }

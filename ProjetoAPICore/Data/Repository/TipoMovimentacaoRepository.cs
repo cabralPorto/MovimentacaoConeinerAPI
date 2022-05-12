@@ -10,7 +10,7 @@ namespace ProjetoAPICore.Data.Repository
         {
             _dbContexto = dbContexto;
         }
-        public void CriarTipoModificacao(TipoMovimentacao tipoMovimentacao)
+        public void CriarTipoMovimentacao(TipoMovimentacao tipoMovimentacao)
         {
             _dbContexto.TipoMovimentacoes.Add(tipoMovimentacao);
             _dbContexto.SaveChanges();
@@ -25,5 +25,7 @@ namespace ProjetoAPICore.Data.Repository
         {
             return _dbContexto.TipoMovimentacoes.ToList();
         }
+
+
     }
 }

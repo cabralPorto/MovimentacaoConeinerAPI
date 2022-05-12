@@ -19,7 +19,7 @@ namespace ProjetoAPICore.Servicos
                     return null;
             
             tipoMovimentacao = CriarEntidadeTipoMovimentacao(tipoMovimentacaoDto);
-            _tipoMovimentacaoRepository.CriarTipoModificacao(tipoMovimentacao);
+            _tipoMovimentacaoRepository.CriarTipoMovimentacao(tipoMovimentacao);
 
             return tipoMovimentacaoDto;   
         }

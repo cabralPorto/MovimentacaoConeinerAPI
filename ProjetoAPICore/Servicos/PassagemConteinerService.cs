@@ -12,30 +12,29 @@ namespace ProjetoAPICore.Servicos
         {
             _passagemConteinerRepository = passagemConteinerRepository;
         }
-
-        public PassagemConteinerDto? CriarPassagemConteiner(PassagemConteinerDto passagemConteinerDto)
+       public PassagemConteinerDto? CriarPassagemConteiner(PassagemConteinerDto passagemConteinerDto)
         {
             var passagemConteiner = _passagemConteinerRepository.ObterPassagemConteinerPorId(passagemConteinerDto.Id);
-                if (passagemConteiner != null)
-                     return null;
+            if (passagemConteiner != null)
+                return null;
 
             passagemConteiner = CriarEntidadePassagemConteiner(passagemConteinerDto);
             _passagemConteinerRepository.CriarPassagemConteiner(passagemConteiner);
 
             return passagemConteinerDto;
-
         }
+      
 
         public IEnumerable<PassagemConteiner> ObterPassagemConteiners()
         {
             return _passagemConteinerRepository.ObterPassagemConteiners();
         }
 
-        private PassagemConteiner CriarEntidadePassagemConteiner(PassagemConteinerDto passagemConteinerDto )
+        private static PassagemConteiner CriarEntidadePassagemConteiner(PassagemConteinerDto passagemConteinerDto )
         {
             return new PassagemConteiner
             {
-                IdPassagemConteiner = passagemConteinerDto.IdPassagemConteiner,
+               
                 IdConteiner = passagemConteinerDto.IdConteiner,
                 Categoria = passagemConteinerDto.Categoria,
                 Status = passagemConteinerDto.Status,
@@ -44,9 +43,6 @@ namespace ProjetoAPICore.Servicos
             };
         }
 
-        PassagemConteiner? IPassagemConteinerService.CriarPassagemConteiner(PassagemConteinerDto passagemConteinerDto)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

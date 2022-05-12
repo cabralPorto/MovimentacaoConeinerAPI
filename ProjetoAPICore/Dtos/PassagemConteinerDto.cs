@@ -4,9 +4,7 @@
     {
         public Guid Id { get; set; }
        
-        public int IdPassagemConteiner { get; set; }
-       
-        public int IdConteiner { get; set; }
+        public Guid IdConteiner { get; set; }
         
         public string Categoria { get; set; }
 

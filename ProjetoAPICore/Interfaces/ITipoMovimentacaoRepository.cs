@@ -4,7 +4,7 @@ namespace ProjetoAPICore.Interfaces
 {
     public interface ITipoMovimentacaoRepository
     {
-        void CriarTipoModificacao(TipoMovimentacao tipoMovimentacao);
+        void CriarTipoMovimentacao(TipoMovimentacao tipoMovimentacao);
 
         TipoMovimentacao ObterTipoMovimentacaoPorId(Guid IdTipoMovimentacao);
 

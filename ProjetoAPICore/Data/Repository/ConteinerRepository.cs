@@ -30,5 +30,17 @@ namespace ProjetoAPICore.Data.Repository
             
             return _dbContexto.Conteiners.ToList();
         }
+
+        public Conteiner ObterConteinerPorNome(String numero)
+        {
+            return _dbContexto.Conteiners.FirstOrDefault(c => c.Numero == numero);
+        }
+
+        public void AlterarConteiner(Conteiner conteiner)
+        {
+            _dbContexto.Conteiners.Update(conteiner);
+            _dbContexto.SaveChanges();
+        }
+
     }
 }

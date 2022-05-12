@@ -7,5 +7,11 @@ namespace ProjetoAPICore.Dtos.Interfaces
 
         IEnumerable<Conteiner> ObterConteiners();
 
+        Conteiner ObterConteinerPorNome(String numero);
+
+        ConteinerDto AlterarConteiner(ConteinerDto conteinerDto);
+        
+
+
     }
 }

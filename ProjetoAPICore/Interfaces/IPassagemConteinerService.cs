@@ -5,7 +5,7 @@ namespace ProjetoAPICore.Interfaces
 {
     public interface IPassagemConteinerService
     {
-        PassagemConteiner? CriarPassagemConteiner(PassagemConteinerDto passagemConteinerDto);
+        PassagemConteinerDto? CriarPassagemConteiner(PassagemConteinerDto passagemConteinerDto);
 
         IEnumerable<PassagemConteiner> ObterPassagemConteiners();
     }

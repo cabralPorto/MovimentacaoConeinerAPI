@@ -31,6 +31,25 @@ namespace ProjetoAPICore.Servicos
             return _conteinerRepository.ObterConteiners();
         }
 
+        public Conteiner ObterConteinerPorNome(String nome)
+        {
+            return _conteinerRepository.ObterConteinerPorNome(nome);
+        }
+
+        public ConteinerDto? AlterarConteiner(ConteinerDto conteinerDto)
+        {
+            var conteiner = _conteinerRepository.ObterConteinerPorId(conteinerDto.Id);
+            if (conteiner == null)
+                return null;
+
+            conteiner.Numero = conteinerDto.Numero;
+            conteiner.Tipo = conteinerDto.Tipo;
+            conteiner.DataAlteracao = DateTime.Now;
+
+            _conteinerRepository.AlterarConteiner(conteiner);
+            return conteinerDto;
+        }
+
         private Conteiner CriarEntidadeConteiner(ConteinerDto conteinerDto)
         {
             return new Conteiner
@@ -40,6 +59,7 @@ namespace ProjetoAPICore.Servicos
                 DataCriacao = DateTime.Now
 
             };
+
         }
     }
 }

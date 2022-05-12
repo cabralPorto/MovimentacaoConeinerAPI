@@ -16,7 +16,7 @@ namespace ProjetoAPICore.Controllers
             
             }
         [HttpPost("criar-Movimentacao")]
-        public ActionResult criarMovimentacao(MovimentacaoDto movimentacaoDto)
+        public ActionResult CriarMovimentacao(MovimentacaoDto movimentacaoDto)
         {
             var movimentacao = _movimetacaoService.CriarMovimentacao(movimentacaoDto);
             if (movimentacao != null)
@@ -27,7 +27,7 @@ namespace ProjetoAPICore.Controllers
         
         
         [HttpGet("consultar-Movimentacao")]
-        public ActionResult consultarconteiner()
+        public ActionResult Consultarconteiner()
         {
             var movimentacoes = _movimetacaoService.ObterMovimentacoes();
             return Ok(movimentacoes);
