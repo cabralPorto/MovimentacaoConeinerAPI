@@ -26,12 +26,49 @@ namespace ProjetoAPICore.Servicos
             return clienteDto;
         }
 
-        public IEnumerable<Cliente> ObterClientes()
+        public IEnumerable<Cliente> ObterTodosClientes()
         {
-            return _clienteRepository.ObterClientes();
+            return _clienteRepository.ObterTodosClientes();
         }
 
-        private Cliente CriarEntidadeCliente(ClienteDto clienteDto)
+        public Cliente ObterClientePorNome(string nome)
+        {
+            return _clienteRepository.ObterClientePorNome(nome);
+        }
+
+        public ClienteDto? AlterarCliente(ClienteDto clienteDto)
+        {
+            var cliente = _clienteRepository.ObterClientePorId(clienteDto.Id);
+
+            if (cliente == null)
+                return null;
+
+            cliente.NomeCliente = clienteDto.NomeCliente;
+            cliente.Cpf = clienteDto.Cpf;
+            cliente.Cnpj = clienteDto.Cnpj;
+            cliente.Email = clienteDto.Email;
+            cliente.DataAlteracao = DateTime.Now;
+
+            _clienteRepository.AlterarCliente(cliente);
+
+            return clienteDto;
+        }
+
+        public bool ExcluirCliente(Guid idCliente)
+        {
+            var cliente = _clienteRepository.ObterClientePorId(idCliente);
+
+            if (cliente == null)
+            {
+                return cliente != null;
+            }        
+
+            _clienteRepository.ExcluirCliente(cliente);
+
+            return cliente != null;
+        }
+
+        private static Cliente CriarEntidadeCliente(ClienteDto clienteDto)
         {
             return new Cliente
             {

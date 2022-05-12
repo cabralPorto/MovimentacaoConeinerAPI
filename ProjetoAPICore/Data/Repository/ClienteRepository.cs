@@ -22,9 +22,27 @@ namespace ProjetoAPICore.Data.Repository
             return _dbContexto.Clientes.FirstOrDefault(c => c.Id == idCliente);
         }
 
-        public IEnumerable<Cliente> ObterClientes()
+        public IEnumerable<Cliente> ObterTodosClientes()
         {
             return _dbContexto.Clientes.ToList();
+        }
+
+        public Cliente ObterClientePorNome(string nome)
+        {
+            return _dbContexto.Clientes.FirstOrDefault(c => c.NomeCliente == nome);
+        }
+
+
+        public void AlterarCliente(Cliente cliente)
+        {
+            _dbContexto.Clientes.Update(cliente);
+            _dbContexto.SaveChanges();
+        }
+
+        public void ExcluirCliente(Cliente cliente)
+        {
+            _dbContexto.Clientes.Remove(cliente);
+            _dbContexto.SaveChanges();
         }
     }
 }
