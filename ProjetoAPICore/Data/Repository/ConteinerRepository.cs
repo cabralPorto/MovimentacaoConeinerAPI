@@ -13,7 +13,7 @@ namespace ProjetoAPICore.Data.Repository
             _dbContexto = dbContexto;        
         }
 
-        public void CriarConteiner(Conteiner conteiner)
+        public void IncluirConteiner(Conteiner conteiner)
         {
             _dbContexto.Conteiners.Add(conteiner);
             _dbContexto.SaveChanges();
@@ -31,7 +31,7 @@ namespace ProjetoAPICore.Data.Repository
             return _dbContexto.Conteiners.ToList();
         }
 
-        public Conteiner ObterConteinerPorNome(String numero)
+        public Conteiner ObterConteinerPorNumero(string numero)
         {
             return _dbContexto.Conteiners.FirstOrDefault(c => c.Numero == numero);
         }

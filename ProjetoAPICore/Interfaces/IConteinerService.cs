@@ -3,7 +3,7 @@ namespace ProjetoAPICore.Dtos.Interfaces
 {
     public interface IConteinerService
     {
-        ConteinerDto? CriarConteiner(ConteinerDto conteinerDto);
+        ConteinerDto? IncluirConteiner(ConteinerDto conteinerDto);
 
         IEnumerable<Conteiner> ObterConteiners();
 

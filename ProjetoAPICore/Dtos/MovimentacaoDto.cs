@@ -11,10 +11,5 @@
        
         public Guid IdPassagemConteiner { get; set; }
 
-        public DateTime? DataHoraInicial { get; set; }
-        
-        public DateTime? DataHoraFinal { get; set; }
-
-
     }
 }

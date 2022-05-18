@@ -17,9 +17,9 @@ namespace ProjetoAPICore.Controllers
        
 
         [HttpPost("criar-cliente")]        
-        public ActionResult CriarCliente(ClienteDto clienteDto)
+        public ActionResult IncluirCliente([FromBody]ClienteDto clienteDto)
         {
-            var cliente =  _clienteServico.CriarCliente(clienteDto);
+            var cliente =  _clienteServico.IncluirCliente(clienteDto);
 
             if(cliente == null)
                 return BadRequest("Cliente já existe.");
@@ -28,7 +28,7 @@ namespace ProjetoAPICore.Controllers
         }
 
         [HttpPut("atualizar-cliente")]
-        public ActionResult AtualizarCliente(ClienteDto clienteDto)
+        public ActionResult AtualizarCliente([FromBody]ClienteDto clienteDto)
         {
             var cliente = _clienteServico.AlterarCliente(clienteDto);
 
@@ -62,7 +62,7 @@ namespace ProjetoAPICore.Controllers
 
     
         [HttpDelete("excluir-cliente/{id}")]
-        public ActionResult ConsultarClientesPorNome(Guid id)
+        public ActionResult ConsultarClientesPorNome([FromBody] Guid id)
         {         
 
             var clientes = _clienteServico.ExcluirCliente(id);

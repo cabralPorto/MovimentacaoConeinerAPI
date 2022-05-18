@@ -4,7 +4,7 @@ namespace ProjetoAPICore.Interfaces
 {
     public interface IMovimentacaoRepository
     {
-        void CriarMovimentacao(Movimentacao movimentacao);
+        void IncluirMovimentacao(Movimentacao movimentacao);
 
         Movimentacao ObterMovimentacaoPorId(Guid idMovimentacao);
         IEnumerable<Movimentacao> ObterMovimentacoes();

@@ -4,7 +4,7 @@ namespace ProjetoAPICore.Interfaces
 {
     public interface IClienteRepository
     {
-        void CriarCliente(Cliente cliente);
+        void IncluirCliente(Cliente cliente);
 
         Cliente ObterClientePorId(Guid idCliente);
         IEnumerable<Cliente> ObterTodosClientes();

@@ -11,7 +11,7 @@ namespace ProjetoAPICore.Data.Repository
             _dbContexto = dbContexto;
         }
 
-        public void CriarCliente(Cliente cliente)
+        public void IncluirCliente(Cliente cliente)
         {
             _dbContexto.Clientes.Add(cliente);
             _dbContexto.SaveChanges();

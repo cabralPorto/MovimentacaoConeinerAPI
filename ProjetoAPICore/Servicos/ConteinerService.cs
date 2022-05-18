@@ -13,15 +13,15 @@ namespace ProjetoAPICore.Servicos
         {
             _conteinerRepository = conteinerRepository;
         }
-        public ConteinerDto? CriarConteiner(ConteinerDto conteinerDto)
+        public ConteinerDto? IncluirConteiner(ConteinerDto conteinerDto)
         {
-            var conteiner = _conteinerRepository.ObterConteinerPorId(conteinerDto.Id);
+            var conteiner = _conteinerRepository.ObterConteinerPorNumero(conteinerDto.Numero);
             if (conteiner != null)
                 return null;
 
             conteiner = CriarEntidadeConteiner(conteinerDto);
 
-            _conteinerRepository.CriarConteiner(conteiner);
+            _conteinerRepository.IncluirConteiner(conteiner);
 
             return conteinerDto;
         }
@@ -33,7 +33,7 @@ namespace ProjetoAPICore.Servicos
 
         public Conteiner ObterConteinerPorNome(String nome)
         {
-            return _conteinerRepository.ObterConteinerPorNome(nome);
+            return _conteinerRepository.ObterConteinerPorNumero(nome);
         }
 
         public ConteinerDto? AlterarConteiner(ConteinerDto conteinerDto)

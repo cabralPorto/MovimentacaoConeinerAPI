@@ -13,7 +13,7 @@ namespace ProjetoAPICore.Servicos
             _clienteRepository = clienteRepository;
         }
 
-        public ClienteDto? CriarCliente(ClienteDto clienteDto)
+        public ClienteDto? IncluirCliente(ClienteDto clienteDto)
         {
             var cliente = _clienteRepository.ObterClientePorId(clienteDto.Id);
 
@@ -21,7 +21,7 @@ namespace ProjetoAPICore.Servicos
                 return null;
 
             cliente = CriarEntidadeCliente(clienteDto);
-            _clienteRepository.CriarCliente(cliente);
+            _clienteRepository.IncluirCliente(cliente);
 
             return clienteDto;
         }

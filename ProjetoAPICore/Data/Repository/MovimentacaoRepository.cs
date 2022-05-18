@@ -12,7 +12,8 @@ namespace ProjetoAPICore.Data.Repository
             _dbContexto = dbContexto;
         
         }
-        public void CriarMovimentacao(Movimentacao movimentacao)
+
+        public void IncluirMovimentacao(Movimentacao movimentacao)
         {
             _dbContexto.Movimentacoes.Add(movimentacao);
             _dbContexto.SaveChanges();
