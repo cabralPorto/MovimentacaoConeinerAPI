@@ -10,5 +10,6 @@ namespace ProjetoAPICore.Interfaces
         Cliente ObterClientePorNome(string nome);
         ClienteDto AlterarCliente(ClienteDto clienteDto);
         bool ExcluirCliente(Guid idCliente);
+        Cliente ObterClientePorNomeSQL();
     }
 }

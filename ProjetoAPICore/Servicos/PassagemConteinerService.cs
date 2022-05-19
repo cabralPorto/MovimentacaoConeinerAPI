@@ -30,6 +30,11 @@ namespace ProjetoAPICore.Servicos
             return _passagemConteinerRepository.ObterPassagemConteiners();
         }
 
+        public PassagemDto ObterPassagemConteiner(string conteiner)
+        {
+            return _passagemConteinerRepository.ObterPassagemConteiner(conteiner);
+        }
+
         private static PassagemConteiner IncluirEntidadePassagemConteiner(PassagemConteinerDto passagemConteinerDto )
         {
             return new PassagemConteiner

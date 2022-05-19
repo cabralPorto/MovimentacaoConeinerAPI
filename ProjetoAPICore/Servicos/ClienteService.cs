@@ -68,6 +68,11 @@ namespace ProjetoAPICore.Servicos
             return cliente != null;
         }
 
+        public Cliente ObterClientePorNomeSQL()
+        {
+            return _clienteRepository.ObterClientePorNomeSQL();
+        }
+
         private static Cliente CriarEntidadeCliente(ClienteDto clienteDto)
         {
             return new Cliente

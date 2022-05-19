@@ -24,6 +24,7 @@ namespace ProjetoAPICore.Configuracoes
 
             services.AddScoped<IPassagemConteinerRepository, PassagemConteinerRepository>();
             services.AddScoped<IPassagemConteinerService, PassagemConteinerService>();
+            services.AddScoped<IDapperBaseRepository, DapperBaseRepository>();
 
             return services;
         }

@@ -1,4 +1,5 @@
-﻿using ProjetoAPICore.Configuracoes;
+﻿using Dapper;
+using ProjetoAPICore.Configuracoes;
 using System.Text;
 
 namespace CurrencyRates.Api
@@ -18,7 +19,10 @@ namespace CurrencyRates.Api
             services.AddEndpointsApiExplorer();
             services.BancoDadosConfiguracao(Configuration);
             services.ResolverInjecaoDependencia();
-            services.AddSwaggerGen();                        
+            services.AddSwaggerGen();
+            SqlMapper.AddTypeHandler(new TratamentoGuidString());
+            SqlMapper.RemoveTypeMap(typeof(Guid));
+            SqlMapper.RemoveTypeMap(typeof(Guid?));
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment environment)
@@ -35,6 +39,6 @@ namespace CurrencyRates.Api
             app.UseAuthorization();
 
             app.MapControllers();
-        }
+        }    
     }
 }

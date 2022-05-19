@@ -1,4 +1,5 @@
-﻿using ProjetoAPICore.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
 
 namespace ProjetoAPICore.Data.Repository
@@ -6,9 +7,12 @@ namespace ProjetoAPICore.Data.Repository
     public class ClienteRepository : IClienteRepository
     {
         private readonly DbContexto _dbContexto;
-        public ClienteRepository(DbContexto dbContexto)
+        private readonly IDapperBaseRepository _dapperBaseRepository;
+        public ClienteRepository(DbContexto dbContexto,
+                                 IDapperBaseRepository dapperBaseRepository)
         {
             _dbContexto = dbContexto;
+            _dapperBaseRepository = dapperBaseRepository;
         }
 
         public void IncluirCliente(Cliente cliente)
@@ -43,6 +47,11 @@ namespace ProjetoAPICore.Data.Repository
         {
             _dbContexto.Clientes.Remove(cliente);
             _dbContexto.SaveChanges();
+        }
+
+        public Cliente ObterClientePorNomeSQL()
+        {
+            return _dapperBaseRepository.Obter<Cliente>("SELECT Id, NomeCliente, Cpf, Cnpj, Email FROM Clientes").Result;
         }
     }
 }

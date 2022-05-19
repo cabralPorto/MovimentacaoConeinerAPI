@@ -72,5 +72,12 @@ namespace ProjetoAPICore.Controllers
 
             return Ok(clientes);
         }
+
+        [HttpGet("consultar-todos-clientes-SQL")]
+        public ActionResult ConsultarTodosClientesSQL()
+        {
+            var clientes = _clienteServico.ObterClientePorNomeSQL();
+            return Ok(clientes);
+        }
     }
 }

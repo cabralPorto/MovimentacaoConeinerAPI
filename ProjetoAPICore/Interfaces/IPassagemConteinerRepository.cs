@@ -1,4 +1,5 @@
-﻿using ProjetoAPICore.Modelos;
+﻿using ProjetoAPICore.Dtos;
+using ProjetoAPICore.Modelos;
 
 namespace ProjetoAPICore.Interfaces
 {
@@ -9,6 +10,7 @@ namespace ProjetoAPICore.Interfaces
         PassagemConteiner ObterPassagemConteinerPorId(Guid IdPassagemConteiner);
 
         IEnumerable<PassagemConteiner> ObterPassagemConteiners();
+        PassagemDto ObterPassagemConteiner(string conteiner);
 
     }
 }

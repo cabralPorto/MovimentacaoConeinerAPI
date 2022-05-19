@@ -8,5 +8,6 @@ namespace ProjetoAPICore.Interfaces
         PassagemConteinerDto? IncluirPassagemConteiner(PassagemConteinerDto passagemConteinerDto);
 
         IEnumerable<PassagemConteiner> ObterPassagemConteiners();
+        PassagemDto ObterPassagemConteiner(string conteiner);
     }
 }
