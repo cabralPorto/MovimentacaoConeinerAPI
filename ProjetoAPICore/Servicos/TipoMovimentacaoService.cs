@@ -12,7 +12,7 @@ namespace ProjetoAPICore.Servicos
         {
             _tipoMovimentacaoRepository = tipoMovimentacaoRepository;
         }
-        public TipoMovimentacaoDto? CriarTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto)
+        public TipoMovimentacaoDto? IncluirTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto)
         {
             var tipoMovimentacao = _tipoMovimentacaoRepository.ObterTipoMovimentacaoPorId(tipoMovimentacaoDto.Id);
                 if (tipoMovimentacao != null)

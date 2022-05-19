@@ -11,7 +11,7 @@ namespace ProjetoAPICore.Data.Repository
         {
             _dbContexto = dbContexto;
         }
-        public void CriarPassagemConteiner(PassagemConteiner passagemConteiner)
+        public void IncluirPassagemConteiner(PassagemConteiner passagemConteiner)
         {
             _dbContexto.PassagemConteiners.Add(passagemConteiner);
             _dbContexto.SaveChanges();

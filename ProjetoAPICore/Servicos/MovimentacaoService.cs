@@ -11,7 +11,7 @@ namespace ProjetoAPICore.Data.Servicos
         {
             _movimentacaoRepository = movimentacaoRepository;
         }
-        public MovimentacaoDto? CriarMovimentacao(MovimentacaoDto movimentacaoDto)
+        public MovimentacaoDto? IncluirMovimentacao(MovimentacaoDto movimentacaoDto)
         {
             var movimentacao = _movimentacaoRepository.ObterMovimentacaoPorId(movimentacaoDto.Id);
             if (movimentacao == null)

@@ -14,9 +14,9 @@ namespace ProjetoAPICore.Controllers
             _passagemConteinerService = passagemConteinerService;
         }
         [HttpPost("cadastrar-passagemConteiner")]
-        public ActionResult CriarPassagemConteiner(PassagemConteinerDto passagemConteinerDto)
+        public ActionResult IncluirPassagemConteiner([FromBody]PassagemConteinerDto passagemConteinerDto)
         {
-            var passagemConteiner = _passagemConteinerService.CriarPassagemConteiner(passagemConteinerDto);
+            var passagemConteiner = _passagemConteinerService.IncluirPassagemConteiner(passagemConteinerDto);
             if (passagemConteiner == null)
                 return BadRequest("Passagem Conteiner já Existe");
 

@@ -16,9 +16,9 @@ namespace ProjetoAPICore.Controllers
             
             }
         [HttpPost("criar-Movimentacao")]
-        public ActionResult CriarMovimentacao(MovimentacaoDto movimentacaoDto)
+        public ActionResult IncluirMovimentacao([FromBody]MovimentacaoDto movimentacaoDto)
         {
-            var movimentacao = _movimetacaoService.CriarMovimentacao(movimentacaoDto);
+            var movimentacao = _movimetacaoService.IncluirMovimentacao(movimentacaoDto);
             if (movimentacao != null)
                 return BadRequest("Movimentação já existente");
 
@@ -26,7 +26,7 @@ namespace ProjetoAPICore.Controllers
         }
         
         
-        [HttpGet("consultar-Movimentacao")]
+        [HttpGet("consultar-movimentacao")]
         public ActionResult Consultarconteiner()
         {
             var movimentacoes = _movimetacaoService.ObterMovimentacoes();

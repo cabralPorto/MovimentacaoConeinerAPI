@@ -5,7 +5,7 @@ namespace ProjetoAPICore.Interfaces
 {
     public interface ITipoMovimentacaoService
     {
-        TipoMovimentacaoDto? CriarTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto);
+        TipoMovimentacaoDto? IncluirTipoMovimentacao(TipoMovimentacaoDto tipoMovimentacaoDto);
 
         IEnumerable<TipoMovimentacao> ObterTipoMovimentacoes();
     }

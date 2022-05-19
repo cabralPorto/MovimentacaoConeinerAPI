@@ -4,7 +4,7 @@ namespace ProjetoAPICore.Interfaces
 {
     public interface IPassagemConteinerRepository
     {
-        void CriarPassagemConteiner(PassagemConteiner passagemConteiner);
+        void IncluirPassagemConteiner(PassagemConteiner passagemConteiner);
 
         PassagemConteiner ObterPassagemConteinerPorId(Guid IdPassagemConteiner);
 

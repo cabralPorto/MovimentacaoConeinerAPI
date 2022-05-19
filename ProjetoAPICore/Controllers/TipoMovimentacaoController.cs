@@ -15,9 +15,9 @@ namespace ProjetoAPICore.Controllers
         }
 
         [HttpPost("Cadatrar-TipoMovimentacao")]
-        public ActionResult CriarTipoMovimentacao( TipoMovimentacaoDto tipoMovimentacaoDto)
+        public ActionResult IncluirTipoMovimentacao( [FromBody]TipoMovimentacaoDto tipoMovimentacaoDto)
         {
-            var tipoMovimentacao = _tipoMovimentacaoService.CriarTipoMovimentacao(tipoMovimentacaoDto);
+            var tipoMovimentacao = _tipoMovimentacaoService.IncluirTipoMovimentacao(tipoMovimentacaoDto);
             if (tipoMovimentacao == null)
                 return BadRequest("Tipo Movimentação já Existe");
 
