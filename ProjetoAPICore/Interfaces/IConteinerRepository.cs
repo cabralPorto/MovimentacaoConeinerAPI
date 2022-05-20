@@ -8,7 +8,7 @@ namespace ProjetoAPICore.Interfaces
         Conteiner ObterConteinerPorId( Guid IdConteiner);
         Conteiner ObterConteinerPorNumero(string numero);
         void AlterarConteiner(Conteiner conteiner);
-        IEnumerable<Conteiner> ObterConteiners();
+        IEnumerable<Conteiner> ObterConteiner();
 
        
     }

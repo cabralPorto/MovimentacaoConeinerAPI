@@ -6,6 +6,6 @@ namespace ProjetoAPICore.Interfaces
     public interface IMovimentacaoService
     {
         MovimentacaoDto? IncluirMovimentacao(MovimentacaoDto movimentacaoDto);
-        IEnumerable<Movimentacao> ObterMovimentacoes();
+        IEnumerable<Movimentacao> ObterMovimentacao();
     }
 }

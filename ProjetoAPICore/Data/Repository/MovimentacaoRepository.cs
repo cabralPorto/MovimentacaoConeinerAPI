@@ -23,7 +23,7 @@ namespace ProjetoAPICore.Data.Repository
             return _dbContexto.Movimentacoes.FirstOrDefault(c => c.Id == idMovimentacao);
         }
 
-        public IEnumerable<Movimentacao> ObterMovimentacoes()
+        public IEnumerable<Movimentacao> ObterMovimentacao()
         {
             return _dbContexto.Movimentacoes.ToList();
         }

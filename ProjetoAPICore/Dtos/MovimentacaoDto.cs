@@ -11,5 +11,7 @@
        
         public Guid IdPassagemConteiner { get; set; }
 
+        public string PauNaCara { get; set; }
+
     }
 }

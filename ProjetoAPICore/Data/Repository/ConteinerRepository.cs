@@ -25,7 +25,7 @@ namespace ProjetoAPICore.Data.Repository
         {
             return _dbContexto.Conteiners.FirstOrDefault(c => c.Id == IdConteiner);
         }
-        public IEnumerable<Conteiner> ObterConteiners()
+        public IEnumerable<Conteiner> ObterConteiner()
         {
             
             return _dbContexto.Conteiners.ToList();

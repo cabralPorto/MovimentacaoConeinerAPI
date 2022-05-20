@@ -5,7 +5,7 @@ namespace ProjetoAPICore.Dtos.Interfaces
     {
         ConteinerDto? IncluirConteiner(ConteinerDto conteinerDto);
 
-        IEnumerable<Conteiner> ObterConteiners();
+        IEnumerable<Conteiner> ObterConteiner();
 
         Conteiner ObterConteinerPorNome(String numero);
 

@@ -7,6 +7,6 @@ namespace ProjetoAPICore.Interfaces
         void IncluirMovimentacao(Movimentacao movimentacao);
 
         Movimentacao ObterMovimentacaoPorId(Guid idMovimentacao);
-        IEnumerable<Movimentacao> ObterMovimentacoes();
+        IEnumerable<Movimentacao> ObterMovimentacao();
     }
 }

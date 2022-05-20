@@ -20,7 +20,7 @@ namespace ProjetoAPICore.Servicos
             if (cliente != null)
                 return null;
 
-            cliente = CriarEntidadeCliente(clienteDto);
+            cliente = IncluirEntidadeCliente(clienteDto);
             _clienteRepository.IncluirCliente(cliente);
 
             return clienteDto;
@@ -73,7 +73,7 @@ namespace ProjetoAPICore.Servicos
             return _clienteRepository.ObterClientePorNomeSQL();
         }
 
-        private static Cliente CriarEntidadeCliente(ClienteDto clienteDto)
+        private static Cliente IncluirEntidadeCliente(ClienteDto clienteDto)
         {
             return new Cliente
             {

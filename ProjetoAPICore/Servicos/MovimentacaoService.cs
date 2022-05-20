@@ -14,7 +14,7 @@ namespace ProjetoAPICore.Data.Servicos
         public MovimentacaoDto? IncluirMovimentacao(MovimentacaoDto movimentacaoDto)
         {
             var movimentacao = _movimentacaoRepository.ObterMovimentacaoPorId(movimentacaoDto.Id);
-            if (movimentacao == null)
+            if (movimentacao != null)
                 return null;
 
             movimentacao = CriarEntidadeMovimentacao(movimentacaoDto);
@@ -23,9 +23,9 @@ namespace ProjetoAPICore.Data.Servicos
             return movimentacaoDto;
         }
 
-        public IEnumerable<Movimentacao> ObterMovimentacoes()
+        public IEnumerable<Movimentacao> ObterMovimentacao()
         {
-            return _movimentacaoRepository.ObterMovimentacoes();
+            return _movimentacaoRepository.ObterMovimentacao();
         }
 
         private static Movimentacao CriarEntidadeMovimentacao(MovimentacaoDto movimentacaoDto)
@@ -35,7 +35,10 @@ namespace ProjetoAPICore.Data.Servicos
                 IdCliente = movimentacaoDto.IdCliente,
                 IdTipoMovimentacao = movimentacaoDto.IdTipoMovimentacao,
                 IdPassagemConteiner = movimentacaoDto.IdPassagemConteiner,
-                DataCriacao = DateTime.Now
+                DataCriacao = DateTime.Now,
+                DataHoraInicial = DateTime.Now,
+                PauNaCara = movimentacaoDto.PauNaCara
+                
 
             };
         }

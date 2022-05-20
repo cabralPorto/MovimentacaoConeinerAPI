@@ -28,9 +28,9 @@ namespace ProjetoAPICore.Controllers
         }
 
         [HttpGet("consultar-conteiner")]
-        public ActionResult ConsultarConteiners()
+        public ActionResult ConsultarConteiner()
         {
-            var conteiners = _conteinerServico.ObterConteiners();
+            var conteiners = _conteinerServico.ObterConteiner();
 
             return Ok(conteiners);
         }
