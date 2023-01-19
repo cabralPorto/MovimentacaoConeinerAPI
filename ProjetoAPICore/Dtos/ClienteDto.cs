@@ -1,4 +1,6 @@
-﻿namespace ProjetoAPICore.Dtos
+﻿using ProjetoAPICore.Modelos;
+
+namespace ProjetoAPICore.Dtos
 {
     public class ClienteDto
     {
@@ -8,5 +10,6 @@
         public string Cnpj { get; set; }
         public string Email { get; set; }
         public List<string> Erros { get; set; }
+        public TipoCliente TipoCliente { get; set; }
     }
 }
