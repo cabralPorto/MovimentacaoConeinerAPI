@@ -1,6 +1,8 @@
-﻿using ProjetoAPICore.Dtos;
+﻿using Microsoft.AspNetCore.Http;
+using ProjetoAPICore.Dtos;
 using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
+using ProjetoAPICore.Validacoes;
 
 namespace ProjetoAPICore.Servicos
 {
@@ -15,6 +17,23 @@ namespace ProjetoAPICore.Servicos
 
         public ClienteDto? CriarCliente(ClienteDto clienteDto)
         {
+           
+            var validator = new ClienteValidacoes();
+
+            var result = validator.Validate(clienteDto);
+
+            if (!result.IsValid)
+            {
+                clienteDto.Erros = new List<string>();
+                foreach (var failure in result.Errors)
+                {
+                    clienteDto.Erros.Add(failure.ErrorMessage);
+                    Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                }
+                return clienteDto;
+            }
+
+
             var cliente = _clienteRepository.ObterClientePorId(clienteDto.Id);
 
             if (cliente != null)

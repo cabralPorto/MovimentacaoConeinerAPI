@@ -1,7 +1,7 @@
 ﻿using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
 
-namespace ProjetoAPICore.Data.Repository
+namespace ProjetoAPICore.Core.Data.Repository
 {
     public class ClienteRepository : IClienteRepository
     {

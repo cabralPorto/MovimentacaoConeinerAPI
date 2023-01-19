@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjetoAPICore.Data;
+using ProjetoAPICore.Core.Data;
 
 namespace ProjetoAPICore.Configuracoes
 {

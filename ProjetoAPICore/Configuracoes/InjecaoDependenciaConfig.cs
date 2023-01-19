@@ -1,4 +1,4 @@
-﻿using ProjetoAPICore.Data.Repository;
+﻿using ProjetoAPICore.Core.Data.Repository;
 using ProjetoAPICore.Data.Servicos;
 using ProjetoAPICore.Dtos.Interfaces;
 using ProjetoAPICore.Interfaces;

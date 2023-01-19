@@ -1,16 +1,16 @@
 ﻿using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
 
-namespace ProjetoAPICore.Data.Repository
+namespace ProjetoAPICore.Core.Data.Repository
 {
     public class MovimentacaoRepository : IMovimentacaoRepository
     {
         private readonly DbContexto _dbContexto;
 
-        public MovimentacaoRepository(DbContexto dbContexto) 
+        public MovimentacaoRepository(DbContexto dbContexto)
         {
             _dbContexto = dbContexto;
-        
+
         }
         public void CriarMovimentacao(Movimentacao movimentacao)
         {
@@ -27,6 +27,6 @@ namespace ProjetoAPICore.Data.Repository
             return _dbContexto.Movimentacoes.ToList();
         }
 
-       
+
     }
 }

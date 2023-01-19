@@ -24,6 +24,9 @@ namespace ProjetoAPICore.Controllers
             if(cliente == null)
                 return BadRequest("Cliente já existe.");
 
+            if(clienteDto.Erros.Any())
+                return BadRequest(clienteDto.Erros);
+
             return Ok(cliente);
         }
 

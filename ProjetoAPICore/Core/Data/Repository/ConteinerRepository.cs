@@ -1,16 +1,15 @@
-﻿
-using ProjetoAPICore.Interfaces;
+﻿using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
 
-namespace ProjetoAPICore.Data.Repository
+namespace ProjetoAPICore.Core.Data.Repository
 {
     public class ConteinerRepository : IConteinerRepository
     {
         private readonly DbContexto _dbContexto;
 
-        public ConteinerRepository(DbContexto dbContexto) 
+        public ConteinerRepository(DbContexto dbContexto)
         {
-            _dbContexto = dbContexto;        
+            _dbContexto = dbContexto;
         }
 
         public void CriarConteiner(Conteiner conteiner)
@@ -19,7 +18,7 @@ namespace ProjetoAPICore.Data.Repository
             _dbContexto.SaveChanges();
         }
 
-   
+
 
         public Conteiner ObterConteinerPorId(Guid IdConteiner)
         {
@@ -27,11 +26,11 @@ namespace ProjetoAPICore.Data.Repository
         }
         public IEnumerable<Conteiner> ObterConteiners()
         {
-            
+
             return _dbContexto.Conteiners.ToList();
         }
 
-        public Conteiner ObterConteinerPorNome(String numero)
+        public Conteiner ObterConteinerPorNome(string numero)
         {
             return _dbContexto.Conteiners.FirstOrDefault(c => c.Numero == numero);
         }

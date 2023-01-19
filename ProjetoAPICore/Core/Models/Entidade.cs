@@ -1,4 +1,4 @@
-﻿namespace ProjetoAPICore.Modelos
+﻿namespace ProjetoAPICore.Core.Models
 {
     public abstract class Entidade
     {
