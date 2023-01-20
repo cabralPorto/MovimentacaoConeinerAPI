@@ -19,7 +19,7 @@ namespace ProjetoAPICore.Controllers
         [HttpPost("criar-cliente")]        
         public ActionResult CriarCliente(ClienteDto clienteDto)
         {
-            var cliente =  _clienteServico.CriarCliente(clienteDto);
+            var cliente =  _clienteServico.AdicionarCliente(clienteDto);
 
             if(cliente == null)
                 return BadRequest("Cliente já existe.");

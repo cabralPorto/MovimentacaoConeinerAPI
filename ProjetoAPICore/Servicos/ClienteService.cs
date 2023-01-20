@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
+using ProjetoAPICore.Core.Notificacoes;
+using ProjetoAPICore.Core.Services;
 using ProjetoAPICore.Dtos;
 using ProjetoAPICore.Interfaces;
 using ProjetoAPICore.Modelos;
@@ -6,16 +8,17 @@ using ProjetoAPICore.Validacoes;
 
 namespace ProjetoAPICore.Servicos
 {
-    public class ClienteService : IClienteService
+    public class ClienteService : BaseService, IClienteService 
     {
         private readonly IClienteRepository _clienteRepository;
 
-        public ClienteService(IClienteRepository clienteRepository)
+        public ClienteService(IClienteRepository clienteRepository,
+                              INotificador notificador) : base(notificador)
         {
             _clienteRepository = clienteRepository;
         }
 
-        public ClienteDto? CriarCliente(ClienteDto clienteDto)
+        public ClienteDto? AdicionarCliente(ClienteDto clienteDto)
         {
            
             var validator = new ClienteValidacoes();
@@ -32,7 +35,7 @@ namespace ProjetoAPICore.Servicos
                 }
                 return clienteDto;
             }
-
+             
 
             var cliente = _clienteRepository.ObterClientePorId(clienteDto.Id);
 
@@ -40,7 +43,7 @@ namespace ProjetoAPICore.Servicos
                 return null;
 
             cliente = CriarEntidadeCliente(clienteDto);
-            _clienteRepository.CriarCliente(cliente);
+            _clienteRepository.AdicionarCliente(cliente);
 
             return clienteDto;
         }
@@ -82,7 +85,7 @@ namespace ProjetoAPICore.Servicos
                 return cliente != null;
             }        
 
-            _clienteRepository.ExcluirCliente(cliente);
+            _clienteRepository.RemoverCliente(cliente);
 
             return cliente != null;
         }

@@ -11,7 +11,7 @@ namespace ProjetoAPICore.Core.Data.Repository
             _dbContexto = dbContexto;
         }
 
-        public void CriarCliente(Cliente cliente)
+        public void AdicionarCliente(Cliente cliente)
         {
             _dbContexto.Clientes.Add(cliente);
             _dbContexto.SaveChanges();
@@ -39,7 +39,7 @@ namespace ProjetoAPICore.Core.Data.Repository
             _dbContexto.SaveChanges();
         }
 
-        public void ExcluirCliente(Cliente cliente)
+        public void RemoverCliente(Cliente cliente)
         {
             _dbContexto.Clientes.Remove(cliente);
             _dbContexto.SaveChanges();
