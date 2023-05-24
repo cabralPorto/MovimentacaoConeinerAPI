@@ -1,4 +1,6 @@
-﻿namespace ProjetoAPICore.Modelos
+﻿using ProjetoAPICore.Core.Models;
+
+namespace ProjetoAPICore.Modelos
 {
     public class Cliente : Entidade
     {        

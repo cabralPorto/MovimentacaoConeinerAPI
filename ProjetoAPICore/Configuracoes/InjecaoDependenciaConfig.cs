@@ -1,4 +1,5 @@
-﻿using ProjetoAPICore.Data.Repository;
+﻿using ProjetoAPICore.Core.Data.Repository;
+using ProjetoAPICore.Core.Notificacoes;
 using ProjetoAPICore.Data.Servicos;
 using ProjetoAPICore.Dtos.Interfaces;
 using ProjetoAPICore.Interfaces;
@@ -25,6 +26,7 @@ namespace ProjetoAPICore.Configuracoes
             services.AddScoped<IPassagemConteinerRepository, PassagemConteinerRepository>();
             services.AddScoped<IPassagemConteinerService, PassagemConteinerService>();
 
+            services.AddScoped<INotificador, Notificador>();
             return services;
         }
     }

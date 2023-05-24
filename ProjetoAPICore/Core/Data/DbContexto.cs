@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoAPICore.Modelos;
 
-namespace ProjetoAPICore.Data
+namespace ProjetoAPICore.Core.Data
 {
     public class DbContexto : DbContext
     {
-        public DbContexto(DbContextOptions<DbContexto> configuration) : base (configuration)
+        public DbContexto(DbContextOptions<DbContexto> configuration) : base(configuration)
         {
             Database.EnsureCreated();
         }
